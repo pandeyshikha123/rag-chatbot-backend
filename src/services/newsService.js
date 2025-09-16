@@ -1,17 +1,11 @@
-// services/newsService.js
-const Parser = require('rss-parser');
-const axios = require('axios');
-const cheerio = require('cheerio');
+import fs from "fs";
+import path from "path";
 
-class NewsService {
-  async ingestNewsFromRSS() {
-    const parser = new Parser();
-    const feeds = [
-      'https://rss.cnn.com/rss/edition.rss',
-      'https://feeds.bbci.co.uk/news/rss.xml',
-      // Add more RSS feeds
-    ];
-    
-    // Implementation for scraping and processing news
-  }
+export async function readLocalNews() {
+  const p = path.resolve("data/news_articles.json");
+  if (!fs.existsSync(p)) return [];
+  const txt = fs.readFileSync(p, "utf-8");
+  const arr = JSON.parse(txt);
+  // each item expected: { id, title, url, text }
+  return arr;
 }
