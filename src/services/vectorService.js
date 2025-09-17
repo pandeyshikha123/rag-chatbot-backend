@@ -1,6 +1,8 @@
-import { QdrantClient } from "qdrant-client";
+// src/services/vectorService.js
 import dotenv from "dotenv";
 dotenv.config();
+
+import { QdrantClient } from "@qdrant/js-client-rest";
 
 let qdrant;
 const COLLECTION = process.env.QDRANT_COLLECTION_NAME || "news_articles";
@@ -9,20 +11,21 @@ export async function initVector() {
   if (qdrant) return qdrant;
   const url = process.env.QDRANT_URL || "http://localhost:6333";
   const apiKey = process.env.QDRANT_API_KEY || undefined;
+  // QdrantClient accepts { url, apiKey }
   qdrant = new QdrantClient({ url, apiKey });
-  // ensure collection exists; best to create with proper vector_size on ingest
+  // Note: you can create collection here if needed (see Qdrant docs)
   return qdrant;
 }
 
 /**
- * upsertDocuments: docs -> [{id, vector, payload:{text, title, url}}]
+ * upsertDocuments: points -> [{id, vector, payload:{text, title, url}}]
  */
 export async function upsertDocuments(points = []) {
   await initVector();
-  // points is an array of {id, vector, payload}
+  if (!points.length) return;
   await qdrant.upsert({
     collection_name: COLLECTION,
-    points,
+    points: points,
   });
 }
 
@@ -35,8 +38,7 @@ export async function vectorSearch(vector, top = 5) {
     collection_name: COLLECTION,
     vector,
     limit: top,
-    with_payload: true
+    with_payload: true,
   });
-  // resp is array of {id, score, payload}
   return resp;
 }
