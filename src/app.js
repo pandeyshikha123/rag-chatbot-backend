@@ -21,11 +21,17 @@ app.use(cors({
   credentials: false, // set true only if you need cookies/auth
 }));
 
-// Make sure OPTIONS preflight is handled for all routes
-app.options("*", cors({
-  origin: FRONTEND_ORIGIN,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-}));
+// Generic preflight handler (safe cross-platform — avoids path-to-regexp '*' parsing issues)
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Origin", FRONTEND_ORIGIN === "*" ? "*" : FRONTEND_ORIGIN);
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+    return res.sendStatus(204);
+  }
+  return next();
+});
+
 
 app.use(express.json());
 app.use(morgan("dev"));
