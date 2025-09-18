@@ -1,14 +1,32 @@
-﻿// src/app.js — endpoint logging enabled
+﻿
+// src/app.js
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import searchRouter from "./routes/search.js";
 
-
 console.log("[app.js] start loading app routes (logging enabled)");
 
 const app = express();
-app.use(cors());
+
+// --- Explicit CORS config ---
+// Allow the frontend origin. For quick testing you can allow all origins.
+// In production prefer to limit to the real frontend origin.
+const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || "*";
+
+app.use(cors({
+  origin: FRONTEND_ORIGIN,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+  credentials: false, // set true only if you need cookies/auth
+}));
+
+// Make sure OPTIONS preflight is handled for all routes
+app.options("*", cors({
+  origin: FRONTEND_ORIGIN,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+}));
+
 app.use(express.json());
 app.use(morgan("dev"));
 app.use("/api/search", searchRouter);
