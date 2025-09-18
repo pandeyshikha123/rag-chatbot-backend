@@ -1,14 +1,62 @@
 [
-  {
-    "id": "article-1",
-    "title": "Local City Council Approves New Park",
-    "url": "https://example.com/news/park",
-    "text": "The city council voted 6-1 to approve the new park in the downtown area. The park will include a playground and community garden..."
-  },
-  {
-    "id": "article-2",
-    "title": "Tech Company Releases Quarterly Results",
-    "url": "https://example.com/news/q1",
-    "text": "TechCo reported revenue of $1.2B for the quarter, beating analyst expectations. CEO commented that investments in AI are paying off..."
-  }
+    {
+      "id": "article-1",
+      "title": "Local City Council Approves New Park",
+      "url": "https://example.com/news/park",
+      "text": "The city council voted 6-1 to approve the new park in the downtown area. The park will include a playground and community garden, aiming to provide more green space for residents. Construction is scheduled to begin next spring and is expected to be completed within 18 months."
+    },
+    {
+      "id": "article-2",
+      "title": "Tech Company Releases Quarterly Results",
+      "url": "https://example.com/news/q1",
+      "text": "TechCo reported revenue of $1.2B for the quarter, beating analyst expectations. CEO Jane Doe commented that investments in AI are paying off, with the company's new AI-powered software driving significant growth. The stock price rose 5% in after-hours trading."
+    },
+    {
+      "id": "article-3",
+      "title": "Hurricane Season Prediction for 2025",
+      "url": "https://example.com/news/hurricane",
+      "text": "Meteorologists are predicting an above-average hurricane season for the Atlantic basin in 2025. Factors contributing to the forecast include warmer-than-average sea surface temperatures and the ongoing La Niña weather pattern. Coastal residents are advised to prepare their emergency kits."
+    },
+    {
+      "id": "article-4",
+      "title": "Global Summit on Climate Change Concludes",
+      "url": "https://example.com/news/climate-summit",
+      "text": "World leaders gathered for a two-day summit to discuss new strategies to combat climate change. While no major new treaties were signed, several nations pledged to increase their investments in renewable energy and to phase out fossil fuel subsidies over the next decade. The next summit is planned for next year in Geneva."
+    },
+    {
+      "id": "article-5",
+      "title": "New Study Links Sleep Habits to Productivity",
+      "url": "https://example.com/news/sleep-study",
+      "text": "A new study from the National Institute of Health shows a strong correlation between consistent sleep habits and workplace productivity. The research found that individuals who maintain a regular sleep schedule have better cognitive function and fewer sick days. Experts recommend aiming for 7-9 hours of sleep per night."
+    },
+    {
+      "id": "article-6",
+      "title": "Electric Vehicle Manufacturer Opens New Factory",
+      "url": "https://example.com/news/ev-factory",
+      "text": "Electra Motors, a leading electric vehicle manufacturer, has officially opened its new gigafactory in Texas. The facility is expected to produce up to 250,000 electric cars per year and create thousands of new jobs in the region. The move is part of the company's plan to meet growing global demand."
+    },
+    {
+      "id": "article-7",
+      "title": "Sports Team Wins Championship in Upset Victory",
+      "url": "https://example.com/news/sports-championship",
+      "text": "The underdog Lions pulled off a stunning upset, defeating the previously undefeated Tigers 4-3 in the final game of the national championship. The winning goal came in the last 30 seconds of the match, sending fans into a frenzy. The team's coach praised their resilience and teamwork."
+    },
+    {
+      "id": "article-8",
+      "title": "New Government Regulation on Data Privacy",
+      "url": "https://example.com/news/data-privacy",
+      "text": "A new federal law on data privacy will come into effect on January 1, 2026. The regulation requires companies to obtain explicit consent from users before collecting and sharing their personal data. Tech industry groups have voiced concerns about the costs of compliance, while consumer advocates have praised the move."
+    },
+    {
+      "id": "article-9",
+      "title": "Food Festival Draws Record Crowds",
+      "url": "https://example.com/news/food-festival",
+      "text": "The annual Downtown Food Festival attracted a record-breaking number of visitors this weekend. Over 50 local vendors participated, offering a wide range of cuisines, from traditional street food to gourmet desserts. The organizers have announced plans to make next year's event even larger."
+    },
+    {
+      "id": "article-10",
+      "title": "Art Gallery Unveils New Modern Art Exhibit",
+      "url": "https://example.com/news/art-gallery",
+      "text": "The City Art Gallery has opened a new exhibit featuring works from emerging modern artists. The collection includes a diverse range of paintings, sculptures, and digital installations. The curator stated that the exhibit is intended to challenge conventional definitions of art."
+    }
 ]
