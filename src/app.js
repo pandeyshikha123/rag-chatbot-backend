@@ -2,6 +2,8 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import searchRouter from "./routes/search.js";
+
 
 console.log("[app.js] start loading app routes (logging enabled)");
 
@@ -9,6 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use("/api/search", searchRouter);
+
 
 // Health check
 app.get("/healthz", (req, res) => {
