@@ -42,8 +42,6 @@ git clone https://github.com/pandeyshikha123/rag-chatbot-backend.git
 cd rag-chatbot-backend
 npm install
 
----
-
 ### 2. Environment Variables
 
 Create a .env file in the project root:
